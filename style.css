@@ -1,0 +1,269 @@
+/* ---------------------------
+   GLOBAL STYLES
+---------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  background-color: #f8f9fa;
+  scroll-behavior: smooth;
+}
+
+/* Link reset */
+a {
+  text-decoration: none;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5 {
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+/* Section spacing */
+section {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+/* Primary color palette */
+:root {
+  --primary-color: #0d6efd;     /* Bootstrap blue */
+  --text-color: #333;
+  --light-bg: #f8f9fa;
+  --dark-bg: #121212;
+}
+
+/* ---------------------------
+   NAVBAR
+---------------------------- */
+.navbar {
+  transition: all 0.3s ease;
+  padding: 0.8rem 0;
+}
+
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+}
+
+.nav-link {
+  color: #ddd !important;
+  margin-left: 1rem;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.nav-link:hover {
+  color: var(--primary-color) !important;
+}
+
+.navbar.scrolled {
+  background-color: rgba(0, 0, 0, 0.9) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* ---------------------------
+   HERO SECTION
+---------------------------- */
+.hero {
+  background: linear-gradient(135deg, #0d6efd, #6610f2);
+  color: #fff;
+  text-align: center;
+}
+
+.hero h1 span {
+  color: #ffc107;
+}
+
+.hero .btn {
+  padding: 0.8rem 1.8rem;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.hero .btn:hover {
+  transform: translateY(-3px);
+}
+
+/* ---------------------------
+   ABOUT SECTION
+---------------------------- */
+#about img {
+  border-radius: 15px;
+  transition: transform 0.3s;
+}
+
+#about img:hover {
+  transform: scale(1.05);
+}
+
+#about p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.7;
+}
+
+/* ---------------------------
+   SKILLS SECTION
+---------------------------- */
+#skills {
+  background: #ffffff;
+  position: relative;
+  overflow: hidden;
+}
+
+#skills::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(13,110,253,0.05), transparent 60%);
+  animation: skillsBg 12s linear infinite;
+  z-index: 0;
+}
+
+@keyframes skillsBg {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+#skills h2 {
+  position: relative;
+  z-index: 1;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+#skills .col-md-4 {
+  position: relative;
+  z-index: 1;
+  background: #fff;
+  border-radius: 16px;
+  padding: 2rem 1rem;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s;
+}
+
+#skills .col-md-4:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(13,110,253,0.15);
+  background: linear-gradient(145deg, #f8f9fa, #ffffff);
+}
+
+#skills i {
+  transition: transform 0.4s ease, color 0.4s;
+}
+
+#skills i:hover {
+  transform: scale(1.25) rotate(5deg);
+  color: var(--primary-color);
+}
+
+#skills h4 {
+  margin-top: 10px;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+#skills .col-md-4:hover h4 {
+  color: var(--primary-color);
+}
+
+#skills p {
+  font-size: 0.95rem;
+  color: #666;
+  transition: color 0.3s ease;
+}
+
+#skills .col-md-4:hover p {
+  color: #444;
+}
+
+@media (max-width: 768px) {
+  #skills .col-md-4 {
+    margin-bottom: 1.5rem;
+  }
+
+}
+
+
+
+
+/* ---------------------------
+   PROJECTS SECTION
+---------------------------- */
+.card {
+  border: none;
+  border-radius: 15px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card-img-top {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+/* ---------------------------
+   CONTACT SECTION
+---------------------------- */
+#contact .btn {
+  border-radius: 50px;
+  padding: 0.8rem 1.6rem;
+  font-weight: 600;
+}
+
+#contact a i {
+  transition: transform 0.3s, color 0.3s;
+}
+
+#contact a i:hover {
+  transform: scale(1.2);
+  color: var(--primary-color);
+}
+
+/* ---------------------------
+   FOOTER
+---------------------------- */
+footer {
+  background: #111;
+  color: #ccc;
+  font-size: 0.9rem;
+}
+
+footer p {
+  margin: 0;
+}
+
+/* ---------------------------
+   RESPONSIVE DESIGN
+---------------------------- */
+@media (max-width: 992px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+  .hero p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  #about img {
+    margin-bottom: 1.5rem;
+  }
+}
